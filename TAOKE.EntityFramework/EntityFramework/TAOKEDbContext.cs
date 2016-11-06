@@ -1,6 +1,8 @@
 ﻿using System.Data.Common;
+using System.Data.Entity;
 using Abp.Zero.EntityFramework;
 using TAOKE.Authorization.Roles;
+using TAOKE.Entities;
 using TAOKE.MultiTenancy;
 using TAOKE.Users;
 
@@ -9,6 +11,8 @@ namespace TAOKE.EntityFramework
     public class TAOKEDbContext : AbpZeroDbContext<Tenant, Role, User>
     {
         //TODO: Define an IDbSet for your Entities...
+
+            //public IDbSet<Student> Students { get; set; }
 
         /* NOTE: 
          *   Setting "Default" to base class helps us when working migration commands on Package Manager Console.
@@ -37,5 +41,7 @@ namespace TAOKE.EntityFramework
         {
 
         }
+
+         
     }
 }

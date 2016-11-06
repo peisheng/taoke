@@ -94,6 +94,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Student.cs" />
     <Compile Include="TAOKEConsts.cs" />
     <Compile Include="TAOKECoreModule.cs" />
     <Compile Include="Authorization\TAOKEAuthorizationProvider.cs" />

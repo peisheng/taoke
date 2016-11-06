@@ -81,6 +81,14 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -188,6 +196,10 @@
     <Compile Include="Migrations\201609281412460_Upgrade_To_Abp_1_0.Designer.cs">
       <DependentUpon>201609281412460_Upgrade_To_Abp_1_0.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611050553099_AddStudent.cs" />
+    <Compile Include="Migrations\201611050553099_AddStudent.Designer.cs">
+      <DependentUpon>201611050553099_AddStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\AbpZeroDbMigrator.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="TAOKEDataModule.cs" />
@@ -261,6 +273,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609281412460_Upgrade_To_Abp_1_0.resx">
       <DependentUpon>201609281412460_Upgrade_To_Abp_1_0.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611050553099_AddStudent.resx">
+      <DependentUpon>201611050553099_AddStudent.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

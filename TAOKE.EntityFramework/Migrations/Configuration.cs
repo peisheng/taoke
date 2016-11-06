@@ -14,6 +14,7 @@ namespace TAOKE.Migrations
         {
             AutomaticMigrationsEnabled = false;
             ContextKey = "TAOKE";
+            //SetSqlGenerator("MySql.Data.MySqlClient",new MySql.Data.Entity.MySqlMigrationSqlGenerator());
         }
 
         protected override void Seed(TAOKE.EntityFramework.TAOKEDbContext context)
