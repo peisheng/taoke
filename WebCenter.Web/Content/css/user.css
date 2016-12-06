@@ -1,0 +1,183 @@
+*,body{}
+ul{margin: 0;padding: 0;}
+body{padding-top: 56px;}
+.clear{float: none;clear: both;}
+.blank{
+	height: 15px;
+    line-height: 15px;
+    clear: both;
+    visibility: hidden;
+}
+.AreaR{ max-width: 980px;margin: 0px auto;
+   }
+.AreaR table{
+	display: table;
+    border-collapse: separate;
+    border-color: grey;
+    
+}
+.AreaR table td{
+	text-align: left;
+	color: #666;
+	padding: 18px 10px;
+}
+.box_1 .userCenterBox{background-color: #fff;}
+.boxCenterList{padding: 8px;}
+h5{
+	height: 26px;
+    line-height: 26px;
+    text-align: right;
+    background-color: #f6f6f6;
+    font-size: 12px;
+    color: #00a98d;
+    padding: 0 10px 0 0;
+}
+h5 span{
+	float: left;
+	font-size: 14px;
+    font-weight: 700;
+    padding-left: 12px;
+    text-align: left;
+}
+.blank{
+	height: 15px;
+    line-height: 15px;
+    clear: both;
+    visibility: hidden;
+}
+table.registr_product input{
+	height: 24px;
+}
+.inputBg{
+	border: 1px solid #b3b3b3;
+    line-height: 23px;
+}
+tr{
+	display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+table.reg_product_list td{
+	border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    font-size: 12px;
+    height: 50px;
+    max-width: 30px;
+    text-align: center;
+    padding: 3px 5px;
+}
+table.reg_product_list{border: 1px solid #ddd;}
+table.reg_product_list tr{
+	text-align: center;
+}
+select{
+
+    white-space: pre;
+    -webkit-rtl-ordering: logical;
+    color: black;
+    background-color: white;
+    border-radius:none;
+    
+}
+.bnt_blue_1{
+	    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 4px;
+    
+    font-weight: 400;
+    padding: 1px 10px;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+    /*webkit-box-shadow: inset 0 1px 1px 0 #2fc0a8;
+    box-shadow: inset 0 1px 1px 0 #2fc0a8;*/
+    background: #00a98d;
+   /* background-image: linear-gradient(to bottom,#03dbb7 0,#00a98d 100%);*/
+    display: inline-block;
+    line-height: 26px;
+    color: #fff;
+}
+.bnt_blue_1{
+	line-height: 22px;
+    font-size: 16px;
+}
+
+.box_1 .registr_product .right: {text-align: right;}
+
+
+/*personal个人设置*/
+.amaz_auto.personal{
+    width: 1000px;
+    height: auto;
+}
+.personal.nav{
+    padding-top: 60px;
+    width: 200px;
+    float: left;
+    height: 500px;
+}
+.personal.nav ul li {
+    border-bottom: 1px solid #e6e8e9;
+}
+.personal.nav ul li a{
+    height: 59px;
+    display: block;
+    line-height: 59px;
+    padding-left: 25px;
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+}
+.personal.nav ul li a:hover{
+    color: #00a98d;
+}
+.personal.main{
+    float: left;
+    
+    padding: 80px 0 0 70px; 
+}
+.personal.main .con{
+    width: 600px;
+    text-align: center;
+}
+.con.one img{
+    width:120px; 
+    height: 120px;
+    border: 2px solid #fff;
+    border-radius: 90px;
+}
+/*.con.one a:hover {
+    background: url(../images/new/headpic_BH.png)no-repeat ;
+    z-index: 99;
+}*/
+.username{
+    line-height: 50px;
+}
+.pro_text div{
+    line-height: 40px;
+}
+.wlfg-wrap .label-name {
+    float: left;
+    width: 197px;
+    text-align: right;
+    height: 40px;
+    line-height: 40px;
+    color: #656e73;
+    font-size: 14px;
+}
+.wlfg-wrap .rlf-group {
+    margin-left: 130px;
+}
+.rlf-radio-group {
+    vertical-align: middle;
+}
+.rlf-radio-group label {
+    margin-right: 20px;
+}
+.wlfg-wrap input[type="radio"]{
+    margin: 0px 0 0;
+}
+.birth select{
+    width: 130px;
+}

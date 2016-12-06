@@ -1,0 +1,39 @@
+﻿
+
+<div class="amaz_cent">
+    <div class="amaz_auto __web-inspector-hide-shortcut__">
+        <div class="clear"></div>
+
+
+
+        <div class="introduct contact">
+            <div class="intr_lf"> 
+                <h2 style="text-align: center;">@ViewData.Model.Title</h2>
+
+                <div>
+                    <p id="content_id">
+                        @HttpUtility.HtmlDecode( ViewData.Model.Content)
+                    </p>
+                </div> 
+            </div>
+           
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function htmlEncode(str) {
+        var ele = document.createElement('span');
+        ele.appendChild(document.createTextNode(str));
+        return ele.innerHTML;
+    }
+    function htmlDecode(str) {
+        var ele = document.createElement('span');
+        ele.innerHTML = str;
+        return ele.textContent;
+    }
+    setTimeout(function () {
+        $("#content_id").html(htmlDecode($("#content_id").html()));
+    }, 10);
+</script>

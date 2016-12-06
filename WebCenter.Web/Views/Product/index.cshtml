@@ -1,0 +1,180 @@
+﻿<div class="aman_cent">
+    <div class="amaz_auto">
+        <div class="amaz_subff">
+            Your Position : <a href="/">Home</a>
+            @foreach (var item in ViewData.Model.Cates)
+            {
+                <text>
+                    &gt; <span class="amaz_lac"><a href="/category/@{@item.id}/@item.category_name.Replace('&', ' ').Replace('.', ' ').Replace('/',' ').Replace('+',' ')" alt="@item.category_name" title="Power">@item.category_name</a></span>
+                </text>
+            }
+            <!--&gt; <span class="amaz_lac"><a href="http://www.aukey.com/category/Power" alt="Power" title="Power">Power</a></span>
+            &gt; <span class="amaz_lac"><a href="http://www.aukey.com/category/Car_Chargers" alt="Car Chargers" title="Car Chargers">Car Chargers</a></span>
+                -->
+            &gt; <span class="amaz_lac">@ViewData.Model.ProductName</span>
+        </div>
+        <div class="amaz_datbox power_first">
+            <div class="clear"></div>
+            <div class="amaz_datbox con">
+                <div class="amaz_lrslid">
+                    <div class="amaz_datimg">
+                        <img src="@ViewData.Model.MainImage.image_path" width="445" height="378">
+                        <!-- 图片变换速度慢问题 -->
+                        @foreach (var item in ViewData.Model.ImagePaths)
+                        {
+                            WebCenter.Entities.image img = item as WebCenter.Entities.image;
+                            <img src="@img.image_path" width="445" height="378" style="display:none;">
+                        }
+                        <!-- <img src="images/1512/cc_s5_1.jpg" width="445" height="378" style="display:none;">
+                         <img src="images/1512/cc_s5_2.jpg" width="445" height="378" style="display:none;">
+                         <img src="images/1512/cc_s5_3.jpg" width="445" height="378" style="display:none;">
+                         <img src="images/1512/cc_s5_4.jpg" width="445" height="378" style="display:none;">
+                         <img src="images/1512/cc_s5_5.jpg" width="445" height="378" style="display:none;">
+                         <img src="images/1512/cc_s5_6.jpg" width="445" height="378" style="display:none;">
+                         <img src="images/1512/cc_s5_7.jpg" width="445" height="378" style="display:none;">
+                        -->
+                    </div>
+                    <!--  <div class="amaz_chag style_ico_a">
+                     </div> -->
+                    <div class="amanz_imbox">
+                        <div class="amaz_ckbox">
+                            <div class="amaz_lim">
+                                <span class="lim_lf"><span class="gavy_triglel_f"></span></span>
+                                <span class="lim_lr"><span class="gavy_triglel_r"></span></span>
+
+                                <div class="show_limbox">
+                                    <ul class="sery_im">
+                                        @foreach (var item in ViewData.Model.ImagePaths)
+                                        {
+                                            WebCenter.Entities.image img = item as WebCenter.Entities.image;
+                                            <li><img check-img="@img.image_path" src="@item.small_path"></li>
+                                        }
+                                        <!--<li><img check-img="images/1512/cc_s5_2.jpg" src="images/thumbs/product/48830/cc_s5_2.thumbs.500x500.jpg"></li>
+                                          <li><img check-img="images/1512/cc_s5_3.jpg" src="images/thumbs/product/48830/cc_s5_3.thumbs.500x500.jpg"></li>
+                                          <li><img check-img="images/1512/cc_s5_4.jpg" src="images/thumbs/product/48830/cc_s5_4.thumbs.500x500.jpg"></li>
+                                          <li><img check-img="images/1512/cc_s5_5.jpg" src="images/thumbs/product/48830/cc_s5_5.thumbs.500x500.jpg"></li>
+                                          <li><img check-img="images/1512/cc_s5_6.jpg" src="images/thumbs/product/48830/cc_s5_6.thumbs.500x500.jpg"></li>
+                                          <li><img check-img="images/1512/cc_s5_7.jpg" src="images/thumbs/product/48830/cc_s5_7.thumbs.500x500.jpg"></li>
+                                            -->
+                                    </ul>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="amaz_lfslid">
+
+                    <div class="gods_head">@ViewData.Model.ProductName                   </div>
+                    <!-- 价格 -->
+                    <!-- <div class="product_price">$</div> -->
+                    <!--  <div class="product_short_desc">Array</div> -->
+                    <!-- 黑白 -->
+
+
+                    <div class="amz_buy_city">
+                        Choose Your Country:
+                        <div class="buy_url type_Black" style="">
+                            @if (!string.IsNullOrEmpty(ViewData.Model.AmazonUrl))
+                            {
+                                <a class="amaz_currt" rel="mark_url" href="javascript:void(0)" url="@ViewData.Model.AmazonUrl">United States</a>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ViewData.Model.germany_amazon_url))
+                            {
+                                <a class="amaz_currt" rel="mark_url" href="javascript:void(0)" url="@ViewData.Model.germany_amazon_url">Germany</a>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ViewData.Model.franch_amazon_url))
+                            {
+                                <a class="amaz_currt" rel="mark_url" href="javascript:void(0)" url="@ViewData.Model.franch_amazon_url">France</a>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ViewData.Model.Italy_amazon_url))
+                            {
+                                <a class="amaz_currt" rel="mark_url" href="javascript:void(0)" url="@ViewData.Model.Italy_amazon_url">Italy</a>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ViewData.Model.spanish_amazon_url))
+                            {
+                                <a class="amaz_currt" rel="mark_url" href="javascript:void(0)" url="@ViewData.Model.spanish_amazon_url">Spain</a>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ViewData.Model.japan_amazon_url))
+                            {
+                                <a class="amaz_currt" rel="mark_url" href="javascript:void(0)" url="@ViewData.Model.japan_amazon_url">Japan</a>
+                            }
+
+                            @if (!string.IsNullOrEmpty(ViewData.Model.uk_amazon_url))
+                            {
+                                <a class="amaz_currt" rel="mark_url" href="javascript:void(0)" url="@ViewData.Model.uk_amazon_url">United Kingdom</a>
+                            }
+
+                        </div>
+
+                    </div>
+                    <div class="btn_box_buylink"><a target="_blank" href="@ViewData.Model.AmazonUrl" rel="buy_btn_mark" class="buy-button">Buy on Amazon</a></div>
+                    <!--  <div class="link_icon">
+                         <li><a href=""><img src="images/new/link1.jpg"></a></li>
+                         <li><a href=""><img src="images/new/link2.jpg"></a></li>
+                         <li><a href=""><img src="images/new/link3.jpg"></a></li>
+                         <li><a href=""><img src="images/new/link4.jpg"></a></li>
+                         <li><a href=""><img src="images/new/link5.jpg"></a></li>
+                         <li><a href=""><img src="images/new/link6.jpg"></a></li>
+                         <li><a href=""><img src="images/new/link7.jpg"></a></li>
+                     </div> -->
+                    <!--<div class="amaz_commen amaz_txt"><span class="com_str"></span>Score : 4.8   </div>-->
+
+
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="amaz_bufhead Product">
+                <div class="amaz_bufhead info">
+                    <!-- <hr> -->
+                    <p>Product Specification</p>
+                    <div class="pro_spe">
+                        @HttpUtility.HtmlDecode(ViewData.Model.Specification)
+                    </div>
+
+                </div>
+                <div class="amaz_bufhead Features">
+                    <p>Product Features</p>
+                    <div class="Features amaz_txt">
+                        @HttpUtility.HtmlDecode(ViewData.Model.Features)
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script>
+    function htmlEncode(str) {
+        var ele = document.createElement('span');
+        ele.appendChild(document.createTextNode(str));
+        return ele.innerHTML;
+    }
+    function htmlDecode(str) {
+        var ele = document.createElement('span');
+        ele.innerHTML = str;
+        return ele.textContent;
+    }
+    $(document).ready(function () {
+        setTimeout(function () {
+            $(".Features").html(htmlDecode($(".Features").html()));
+            $(".pro_spe").html(htmlDecode($(".pro_spe").html()));
+        }, 10);
+
+        $("[rel='mark_url']").click(function () {
+            var url = $(this).attr("url");
+            $("[rel='buy_btn_mark']").attr("href", url);
+        });
+
+    });
+</script>

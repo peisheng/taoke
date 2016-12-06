@@ -1,0 +1,101 @@
+﻿<div class="amaz_cent">
+    <div class="amaz_auto __web-inspector-hide-shortcut__">
+        <div class="clear"></div>
+
+
+
+        <div class="introduct contact">
+            <div class="intr_lf">
+
+                <h2 style="text-align: center;">Contact Us</h2>
+
+                <div>
+                    <p id="content_id">
+                        @HttpUtility.HtmlDecode( ViewData.Model.Content)
+                    </p>
+                </div>
+                <hr>
+                <div class="plis">
+                    <div class="comment_container">
+                        <h4>You can also send us a message here!</h4>
+
+                        <ul class="cont_info">
+                            <li>
+                                <input type="text" name="name" id="name" placeholder="Name">
+                            </li>
+                            <li>
+                                <input type="text" name="email" id="email" placeholder="Email *">
+                            </li>
+                            <li>
+                                <input type="text" name="telephone" id="phone" placeholder="Telephone">
+                            </li>
+                            <li>
+                                <input type="text" name="'subject" id="subject" placeholder="Subject">
+                            </li>
+
+                            <li>
+                                <textarea id="content" name="content" placeholder="Requests *"></textarea>
+                            </li>
+
+                            <li class="last">
+                                <input type="submit" value="Submit" id="submit" class="form-submit">
+                                <div id="ajax_loading"></div>
+                            </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+
+                function htmlEncode(str) {
+                    var ele = document.createElement('span');
+                    ele.appendChild(document.createTextNode(str));
+                    return ele.innerHTML;
+                }
+                function htmlDecode(str) {
+                    var ele = document.createElement('span');
+                    ele.innerHTML = str;
+                    return ele.textContent;
+                }
+
+            $(document).ready(function () {
+
+                $("#submit").click(function () {
+                    var name = $("#name").val();
+                    var phone = $("#phone").val();
+                    var email = $("#email").val();
+                    var subject = $("#subject").val();
+                    var content = $("#content").val();
+                    if (!email || !content) {
+                        alert("email and  requests are required.");
+                        return;
+                    }
+                    var Model = {
+                        Name: name,
+                        Email: email,
+                        Phone: phone,
+                        Subject: subject,
+                        Content: content
+                    }
+                    $.post("/page/SaveContact", Model,
+                         function (data) {
+                             location.href = "/home/submit";
+                         });
+                });
+
+                setTimeout(function () {
+                    $("#content_id").html(htmlDecode($("#content_id").html()));
+                    
+                }, 10);
+
+
+            });
+
+
+         
+            </script>
+
+        </div>
+    </div>
+</div>

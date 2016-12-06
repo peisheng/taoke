@@ -1,0 +1,204 @@
+﻿<div class="amaz_top_head">
+
+    <nav class="m_nav">
+        <ul class="nav-list-new">
+            <li class="nav-item">
+                <a>PRODUCTS</a>
+                <ul class="nav-submenu">
+                    @foreach (var item in ViewBag.ParentCates as List<WebCenter.Entities.category>)
+                    {
+                        
+                         <li class="nav-submenu-item">
+                             <a href="/category/@item.id/@item.category_name.Replace('&', ' ').Replace('.', ' ').Replace('/', ' ').Replace('+',' ')">@item.category_name.Replace('&', ' ').Replace('.', ' ').Replace('/', ' ')</a>
+                          </li> 
+                    }
+                     
+                </ul>
+            </li>
+           
+            <li class="nav-item">
+                <a>SUPPORT</a>
+                <ul class="nav-submenu">
+                    <li class="nav-submenu-item"><a href="http://www.rainbrace.com/welcome/contact">Contact Us</a></li>
+                  
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="nav_headbox">
+        <ul class="nav_head left">
+            <a href="/"><div class="logo_img" style="">
+                @*@{
+                    if (string.IsNullOrEmpty(ViewBag.LogoPath))
+                    {
+                       <span>Rainbrace</span>  
+                    }
+                    else
+                    {
+                        <img src="@ViewBag.LogoPath" style="width:150px;height:50px;" /> 
+                    }
+                }*@
+                            Rainbrace
+                </div></a>
+        </ul>
+        <ul class="nav_head mid">
+            <li>
+                <div class="list" id="navlistp">
+                    <a style="cursor: default;" href="javascript:void(0);">PRODUCTS</a>
+                </div>
+            </li>
+           <!-- <li>
+                <div class="list" id="navlistaip">
+                    <a style="cursor: default;">TECHNOLOGIES</a>
+                </div>
+            </li>-->
+            <li>
+                <div class="list" id="navlistsup">
+                    <a style="cursor: default;">SUPPORT</a>
+                </div>
+            </li>
+        </ul>
+
+        <!-- menu1 begin -->
+        <div class="nav">
+            <div class="box" id="navbox" style="">
+                <div class="cont" style="display:none;">
+                    <ul class="sublist clearfix">
+                        @{
+                            var cates = ViewBag.Cates as Dictionary<WebCenter.Entities.category, List<WebCenter.Entities.category>>;
+                            foreach (KeyValuePair<WebCenter.Entities.category, List<WebCenter.Entities.category>> kv in cates)
+                            { 
+                                var cateP=kv.Key;
+                                var subList=kv.Value;
+                                var sName = cateP.category_name.Replace('&', ' ').Replace('.', ' ').Replace('/', ' ').Replace('+', ' ');
+                                
+                                <li>
+                                    <div style="width:100%;height:auto;">
+                                        <h3 class="mcate-item-hd">
+                                            <span><a href="/category/@cateP.id/@sName">@cateP.category_name</a></span>
+                                        </h3>
+                                    </div>
+                                    <p class="mcate-item-bd">
+                                        @foreach (var item in subList)
+{
+    var ssName = item.category_name.Replace('&', ' ').Replace('.', ' ').Replace('/', ' ').Replace('+', ' ');
+    <a href="/category/@item.id/@ssName" title="Power Banks">@item.category_name</a>
+}
+                                        
+                                    </p>
+                                </li>
+
+                            }
+                        }
+
+                      
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        
+
+        <!-- menu3 begin -->
+        <div class="nav">
+            <div style="width:220px;margin:right auto;" class="box" id="navboxsup" style="height:0px;opacity:0;overflow:hidden;">
+                <div class="contain" style="display:none;">
+                    <ul class="sublist clearfix">
+                        <li><a href="/welcome/contact">Contact Us</a></li>
+                        @*<li><a href="http://www.aukey.com/index/user" class="pregister">Warranty Registration</a></li>
+                        <li><a href="http://www.aukey.com/index/software">Software & Manual</a></li>*@
+                    </ul>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+
+    </div>
+
+
+    <!-- search -->
+    @*<div class="search" style="position:absolute;right:130px;z-index:99;top:-3px; display:none;">
+        <form action="/search/index" method="post" class="searchForm">
+            <div class="searchimg" style="height:46px;width:46px;background: url(../images/new/search.png) no-repeat 15px 19px;"></div>
+            <div class="searchtext" style="display:none;"><input type="text" name="text" style="width:0px;"></div>
+        </form>
+    </div>*@
+
+    <!-- sing_in -->
+    @*<div class="person" onmouseover="display()" onmouseout="disappear()" style="display:none;">
+        <ul class="nav_head right">
+            <li style="margin-right:0px;background: url(../images/new/new_icon.png) no-repeat -49px -278px;">
+                <a class="sign_in filter_img" id="pers" alt="Sign in" title="Sign in"></a>
+            </li>
+
+            <div id="sign" onmouseover="display()" onmouseout="disappear()" style="width:252px;">
+
+                <form method="post" action="/index/login" id="customer_login" accept-charset="UTF-8">
+                    <input type="hidden" value="customer_login" name="form_type"><input type="hidden" name="utf8" value="">
+
+                    <input type="text" id="customer_email" name="customer[email]" placeholder="Email or Username*" style="width:225px;height: 30px;">
+
+                    <input type="password" name="customer[password]" placeholder="Password*" id="customer_password">
+
+                    <a href="/user/forgot" id="forgot" style="float:right;margin-right:10px;">Forgot<span style="font-family:Arial;">?</span></a>
+                    <div class="action-btn">
+                        <p><input type="submit" class="btn top" value="Sign In"></p>
+                        <p>New to AUKEY<span style="font-family:Arial;">?</span> Register <a href="/user/register" id="register">here</a></p>
+                    </div>
+                </form>
+            </div>
+        </ul>
+    </div>*@
+
+    <script type="text/javascript" language="javascript">
+        function display() {
+            document.getElementById("sign").style.display = "block";
+        }
+        function disappear() {
+            document.getElementById("sign").style.display = "none";
+        }
+
+        if ($(window).width() < 960) {
+            $('.search').hide();
+        }
+
+        $('.search').click(function () {
+            if ($('.searchimg').is(':visible')) {
+                $('.searchimg').hide();
+                $('.searchtext').show();
+                $('.searchtext > input').val('');
+                $('.searchtext > input').animate({ width: "150px" }, 500);
+                $('.searchtext > input').focus();
+            }
+        });
+
+        var event = event || window.event
+
+        $('.searchtext > input').keyup(function () {
+            if (event.keyCode == 13) {
+                $('.searchForm').submit();
+            }
+        });
+
+
+        //search page  无效
+        $('.searchtext > input').blur(function () {
+            $('.searchtext > input').animate({ width: "0px" }, 500);
+            setTimeout(function () {
+                $('.searchtext').hide();
+                $('.searchimg').show();
+            }, 500);
+
+        });
+
+        //未登录
+        $('.pregister').click(function () {
+            $('.pregister').attr('href', 'javascript:void(0)');
+            $('#sign').show();
+        });
+
+
+    </script>
+</div>  

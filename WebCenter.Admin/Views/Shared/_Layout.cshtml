@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+     
+    <div class="navbar navbar-default">
+       @*@Html.Partial("_CategoryHeader", (WebCenter.Web.Models.SiteSetting)ViewBag.SiteSetting)*@
+    </div>
+    
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                    <div class="col-md-3">
+                        <a href="cccc" target="_blank">hellow</a>
+                    </div>
+                </div>
+
+            </div>
+            <div class="center-block text-center">
+                <p>
+                    @*&copy; @DateTime.Now.Year - @ViewBag.SiteSetting.SiteNameCN 版权所有*@
+
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

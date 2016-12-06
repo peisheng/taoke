@@ -1,0 +1,74 @@
+﻿<div class="amaz_foter">
+    <div class="amaz_auto_foter">
+
+        <div class="foot-links">
+
+            <ul class="foot-links-content">
+
+
+                <li class="foot links left">
+                    <span>Be the first to know about our latest products</span>
+                    <form action="/home/submit" method="post" accept-charset="utf-8">
+                        <div class="newsletter">
+                            <input type="text" style="margin-bottom: 0px;" id="user_email" name="user_email" class="inputBg sub_input" placeholder="E-mail address">
+                            <input type="submit" class="sub_bnt" value="Subscribe" id="subscript">
+
+                        </div>
+                    </form>
+                </li>
+                <li class="foot links right">
+                    <div class="icon">
+                        @if (!string.IsNullOrEmpty(ViewBag.TwitterUrl))
+                        {
+                            <a class="twit_ico" href="@ViewBag.TwitterUrl" title=" Official Twitter" target="_blank"></a>
+                        }
+
+                        @if (!string.IsNullOrEmpty(ViewBag.FaceBookUrl))
+                        {
+                            <a class="face_ico" href="@ViewBag.FaceBookUrl" title=" Official Facebook" target="_blank"></a>
+                        }
+
+                        @if (!string.IsNullOrEmpty(ViewBag.GooglePlusUrl))
+                        {
+                            <a class="youtb_ico" href="@ViewBag.GooglePlusUrl" title=" Official Youtube" target="_blank"></a>
+                        }
+
+                        @if (!string.IsNullOrEmpty(ViewBag.InstagramUrl))
+                        {
+                            <a class="inst_ico" href="@ViewBag.InstagramUrl" title=" Official Youtube" target="_blank"></a>
+                        }
+
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="clear"></div>
+    <div class="copyright">
+        <ul class="copyright left"><a href="/welcome/our_company">About Us</a></ul>
+        <ul class="copyright mid"><a href="/welcome/privacy">Privacy Policy</a> &nbsp;|&nbsp;<a href="/welcome/terms_conditions">Terms & Conditions</a></ul>
+        <ul class="copyright right">
+            Copyright © 2016 @ViewBag.CopyRight. All rights reserved.
+        </ul>
+    </div>
+    <!-- 至顶部 -->
+    <a id="ScrollTopBtn" class="ui-scrolltop" title="Back To Top">Back To Top</a>
+    <script>
+        $('#ScrollTopBtn').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 400)
+        });
+
+        $("#subscript").click(function () {
+            var val = $("#user_email").val();
+            var reg = /^(\w)+(\.\w+)*@@(\w)+((\.\w+)+)$/;
+            if (!reg.test(val)) {
+                alert("please input the currect email address");
+                return false;
+            }
+        });
+    </script>
+
+</div>
